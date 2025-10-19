@@ -1,5 +1,5 @@
 # airm-spd-kmeans-dti
-Implementation and experiments for DTI segmentation using k-means on the SPD manifold with AIRM, Log-Euclidean, Euclidean, and a hybrid AIRM–Log-Euclidean metric.
+DTI segmentation via k-means in SPD (AIRM, LE), NO SPD, and HYBRID SPD and NO SPD: implementation, α sweep, K ∈ {2,3,4}, LOSO validation (S1–S7), and statistical analysis (Wilcoxon test and y-scrambling).
 
 <div align="center">
   <img src="airm_kmeans.png" alt="Banner do perfil" width="100%">
