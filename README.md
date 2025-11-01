@@ -1,4 +1,4 @@
-# airm-spd-kmeans-dti 
+# airm-spd-kmeans-dti
 DTI segmentation via k-means in SPD (AIRM, LE), NO SPD, and HYBRID SPD and NO SPD: implementation, α sweep, K ∈ {2,3,4}, LOSO validation, and statistical analysis (Wilcoxon test and y-scrambling).
 
 <div align="center">
