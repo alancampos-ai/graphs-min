@@ -15,5 +15,5 @@ DTI segmentation via k-means in SPD (AIRM, LE), NO SPD, and HYBRID SPD and NO SP
 Use the provided `environment.yml`.
  
 conda env create -f environment.yml 
-conda activate ned-loso
+conda activate ned-loso 
 python -c "import numpy,scipy,sklearn,nibabel; print('ok')"
