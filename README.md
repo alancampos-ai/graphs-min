@@ -16,4 +16,4 @@ Use the provided `environment.yml`.
  
 conda env create -f environment.yml 
 conda activate ned-loso 
-python -c "import numpy,scipy,sklearn,nibabel; print('ok')"
+python -c "import numpy,scipy,sklearn,nibabel; print('ok')" 
