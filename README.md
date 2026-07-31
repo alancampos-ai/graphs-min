@@ -1,9 +1,6 @@
 # airm-spd-kmeans-dti
 DTI segmentation via k-means in SPD (AIRM, LE), NO SPD, and HYBRID SPD and NO SPD: implementation, α sweep, K ∈ {2,3,4}, LOSO validation, and statistical analysis (Wilcoxon test and y-scrambling).
 
-<div align="center">
-  <img src="airm_kmeans.png" alt="Banner do perfil" width="100%">
-</div>
 
 ## Repository layout (expected)
 - `src/`: core algorithms (`kmeans.py`, `utils.py`, `metrics.py`, `segment_dti.py`)
