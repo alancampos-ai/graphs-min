@@ -46,3 +46,4 @@ pip install -e src
 
 * Copyright (c) alancampos-ai
 * Code released under the MIT License.
+ 
