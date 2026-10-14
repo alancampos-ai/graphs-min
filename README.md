@@ -1,49 +1,30 @@
 # Ecnn graphs mineral
 
-#### Article: <small><strong>E-CNN</strong></small>  <a href="https://doi.org/10.1016/j.cam.2026.117584"><img src="https://cdn.simpleicons.org/doi/2dd4bf" alt="DOI" height="14" align="absmiddle"></a>  <a href="https://doi.org/10.1016/j.cam.2026.117584"><img src="https://cdn.simpleicons.org/zenodo/2dd4bf" alt="Zenodo" height="14" align="absmiddle"></a>  <a href="https://drive.google.com/drive/folders/1YBVxdJ12ujfiddyKyu-Z6pwpmwWGmsDr?usp=drive_link"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" alt="Google Drive" height="14" align="absmiddle"></a></small>
+Novo link https://drive.google.com/drive/folders/1PFo1AklBpse2Tg4RbjPkNxztqyD_DMNY?usp=sharing
 
-Experiments on six-channel symmetric tensor-field datasets evaluate conventional, group-equivariant, continuous-equivariant, and gauge-equivariant encoder-decoder CNNs under a common computational setting. The implementation includes four conventional variants: `plain`, composed of two-convolution GroupNorm-SiLU blocks; `plain_rot`, the same architecture trained with rotational augmentation; `plain++`, a nested architecture with dense multiscale skip paths; and `plain++_rot`, its rotationally augmented counterpart.
 
-The discrete equivariant family comprises the cyclic variants `c4_norm`, `c4_pointwise`, `c5_norm`, `c6_norm`, `c7_norm`, `c8_norm`, `c8_pointwise`, `c8_quotient`, and `c16_norm`, together with the dihedral variants `d4_norm`, `d4_pointwise`, `d8_norm`, `d8_pointwise`, and `d8_quotient`. The networks use `escnn` equivariant convolutions with regular or quotient representations and norm-based or pointwise nonlinearities.
+#### Article:   <small><strong>Interval-quota matchings in chain graphs</strong>  <a href=""><img src="https://cdn.simpleicons.org/doi/2dd4bf" alt="DOI" height="14" align="absmiddle"></a>  <a href=""><img src="https://cdn.simpleicons.org/zenodo/2dd4bf" alt="Zenodo" height="14" align="absmiddle"></a>  <a href="https://drive.google.com/drive/folders/1HGzCo9WKmTU7dlOZhaCHo8pxqkh0ZxLk?usp=sharing"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" alt="Google Drive" height="14" align="absmiddle"></a></small>
 
-The continuous equivariant family includes `so2_norm` and `so2_gated` for (SO(2)), as well as `o2_norm`, `o2_gated`, `o2_induced_norm`, and `o2_induced_gated` for (O(2)). The architectures combine pure or induced representations with norm-based or gated nonlinearities.
-
-The `gauge` architecture constructs local frames from the order-two tensor components, modulates geometric connections using frame confidence, and applies residual `GemConv` blocks with parallel-transport pooling and unpooling. The implementation also includes gauge-confidence ablations.
-
-The experimental scripts support cross-validation over configurable data subsets, multiple random seeds, deterministic internal validation partitions, probability ensembles, rotational test-time augmentation, and validation-based temperature scaling. Evaluation includes IoU, F1/Dice, Precision, Recall, Accuracy, predictive entropy, expected calibration error, negative log-likelihood, Brier score, variance across seeds, AURC, EAURC, execution time, peak memory usage, and the selected training epoch. Additional scripts evaluate equivariance deviations for cyclic, dihedral, (SO(2)), (O(2)), and gauge-equivariant networks, together with tensor-field consistency and gauge-isotropy stability.
+We study exact quota-constrained matchings in Ferrers-ordered chain graphs. QuotaMatch gives integral flow for laminar quotas, a canonical $O(n+m)$ prefix construction, a shortest-path envelope for crossing intervals, and an $O(r+\ell)$ procedure for $r$ threshold classes and $\ell$ rise blocks. Labeled lifting takes $O(n)$ time including output. Feasibility is NP-complete when quota sets may use at most two intervals, even with universal neighborhoods, unit quotas, and two-element sets. The study comprises $193$ configurations, $20$ seeds, and $15{,}440$ method executions. QuotaMatch is compared with HiGHS-LP, HiGHS-MILP, and CP-SAT on $80$ prefix, $65$ interval, and $48$ laminar configurations. All four methods agree on feasibility in $3{,}860$ cases. For crossing intervals at $(n,m)=(8192,16384)$, QuotaMatch reduces mean wall time by $87.6\%$, $88.5\%$, and $99.9\%$ against HiGHS-LP, HiGHS-MILP, and CP-SAT, respectively. Each execution uses two untimed warm-ups and five measured repetitions, retaining the median wall time. In the largest plotted interval case, QuotaMatch averages $0.0487$ s with $139.5$ MiB mean process peak resident set size. On a balanced binary laminar tree with $n=1024$ and zero slack, all three solvers are faster than QuotaMatch.
 
 #### Dependencies
 
-* Python >= 3.9
-* numpy
-* scipy
-* nibabel
-* dipy
-* matplotlib
-* torch
-* escnn
-* torch-geometric
-* torch-scatter
-* torch-cluster
-* torch-sparse
-* tqdm
-* opt-einsum
-* trimesh
-* pytorch-ignite
-* openmesh
+* Python 3.11
+* NumPy 1.26.4
+* SciPy 1.13.1
+* Matplotlib 3.9.2
+* OR-Tools 9.6
+* Protobuf 4.21.12
+* PyYAML 6.0.2
 
-#### Bash
+#### Installation
 
 ```bash
-pip install numpy scipy nibabel dipy matplotlib escnn
-pip install torch
-pip install torch-geometric torch-scatter torch-cluster torch-sparse
-pip install tqdm opt-einsum trimesh pytorch-ignite openmesh
-pip install -e src
+docker compose -f docker/compose.yml build
+docker compose -f docker/compose.yml run --rm quota
 ```
 
 #### License (MIT)
 
 * Copyright (c) alancampos-ai
 * Code released under the MIT License.
- 
