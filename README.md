@@ -1,27 +1,31 @@
 # Ecnn graphs mineral
 
-Novo link https://drive.google.com/drive/folders/1PFo1AklBpse2Tg4RbjPkNxztqyD_DMNY?usp=sharing
+#### Article:   <small><strong>Equivariant Switching Gain-Graph Descriptor for Mineral Images</strong>  <a href=""><img src="https://cdn.simpleicons.org/doi/2dd4bf" alt="DOI" height="14" align="absmiddle"></a>  <a href=""><img src="https://cdn.simpleicons.org/zenodo/2dd4bf" alt="Zenodo" height="14" align="absmiddle"></a>  <a href="https://drive.google.com/drive/folders/1PFo1AklBpse2Tg4RbjPkNxztqyD_DMNY?usp=sharing"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" alt="Google Drive" height="14" align="absmiddle"></a></small>
 
+We introduce a switching-invariant gain-graph (SIGG) descriptor for paired reflected-light microscopy images and binary mineral masks. SIGG combines canonical multiscale local relations with $D_4$-equivariant component geometry and appearance. Switching reduces local gain profiles from 1,092 to 84 entries and halves padded storage from 36,864 to 18,432. Evaluation uses 81 fields from one iron-ore specimen, 20 query seeds, five source-image folds, and 11,340 transformed partial-view queries per method. Among eleven representations, SIGG achieves mean reciprocal rank (MRR) 0.9874, Recall@1 0.9846, and Recall@5 0.9895. MRR without switching is 0.9877 (Holm-adjusted $p=0.625$). Pooled invariant SIGG attains MRR 0.1111 ($p_{\rm Holm}=5.36\times10^{-14}$). Mean relative equivariance error is $9.12\times10^{-17}$. Paired source-image inference uses Wilcoxon tests, effect sizes, and bootstrap confidence intervals. Sensitivity selection uses outer-training folds. Runtime, memory, energy, and neural floating-point operation counts are reported.
 
-#### Article:   <small><strong>Interval-quota matchings in chain graphs</strong>  <a href=""><img src="https://cdn.simpleicons.org/doi/2dd4bf" alt="DOI" height="14" align="absmiddle"></a>  <a href=""><img src="https://cdn.simpleicons.org/zenodo/2dd4bf" alt="Zenodo" height="14" align="absmiddle"></a>  <a href="https://drive.google.com/drive/folders/1HGzCo9WKmTU7dlOZhaCHo8pxqkh0ZxLk?usp=sharing"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" alt="Google Drive" height="14" align="absmiddle"></a></small>
+#### Dependencies (evaluation environment)
 
-We study exact quota-constrained matchings in Ferrers-ordered chain graphs. QuotaMatch gives integral flow for laminar quotas, a canonical $O(n+m)$ prefix construction, a shortest-path envelope for crossing intervals, and an $O(r+\ell)$ procedure for $r$ threshold classes and $\ell$ rise blocks. Labeled lifting takes $O(n)$ time including output. Feasibility is NP-complete when quota sets may use at most two intervals, even with universal neighborhoods, unit quotas, and two-element sets. The study comprises $193$ configurations, $20$ seeds, and $15{,}440$ method executions. QuotaMatch is compared with HiGHS-LP, HiGHS-MILP, and CP-SAT on $80$ prefix, $65$ interval, and $48$ laminar configurations. All four methods agree on feasibility in $3{,}860$ cases. For crossing intervals at $(n,m)=(8192,16384)$, QuotaMatch reduces mean wall time by $87.6\%$, $88.5\%$, and $99.9\%$ against HiGHS-LP, HiGHS-MILP, and CP-SAT, respectively. Each execution uses two untimed warm-ups and five measured repetitions, retaining the median wall time. In the largest plotted interval case, QuotaMatch averages $0.0487$ s with $139.5$ MiB mean process peak resident set size. On a balanced binary laminar tree with $n=1024$ and zero slack, all three solvers are faster than QuotaMatch.
-
-#### Dependencies
-
-* Python 3.11
+* Python 3.10.19
 * NumPy 1.26.4
-* SciPy 1.13.1
-* Matplotlib 3.9.2
-* OR-Tools 9.6
-* Protobuf 4.21.12
-* PyYAML 6.0.2
+* SciPy 1.12.0
+* pandas 2.2.3
+* scikit-image 0.25.2
+* scikit-learn 1.7.2
+* PyTorch 2.2.0+cu121
+* torchvision 0.17.0
+* Matplotlib 3.10.8
+* Pillow 11.3.0
+* PyYAML 6.0.3
+* psutil 7.0.0
+* joblib 1.5.3
+* pytest 9.1.1
 
 #### Installation
 
 ```bash
-docker compose -f docker/compose.yml build
-docker compose -f docker/compose.yml run --rm quota
+docker compose -f docker/compose.yaml build
+docker compose -f docker/compose.yaml up --abort-on-container-exit
 ```
 
 #### License (MIT)
