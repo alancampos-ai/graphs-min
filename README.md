@@ -4,7 +4,7 @@
 
 We introduce a switching-invariant gain-graph (SIGG) descriptor for paired reflected-light microscopy images and binary mineral masks. SIGG combines canonical multiscale local relations with $D_4$-equivariant component geometry and appearance. Switching reduces local gain profiles from 1,092 to 84 entries and halves padded storage from 36,864 to 18,432. Evaluation uses 81 fields from one iron-ore specimen, 20 query seeds, five source-image folds, and 11,340 transformed partial-view queries per method. Among eleven representations, SIGG achieves mean reciprocal rank (MRR) 0.9874, Recall@1 0.9846, and Recall@5 0.9895. MRR without switching is 0.9877 (Holm-adjusted $p=0.625$). Pooled invariant SIGG attains MRR 0.1111 ($p_{\rm Holm}=5.36\times10^{-14}$). Mean relative equivariance error is $9.12\times10^{-17}$. Paired source-image inference uses Wilcoxon tests, effect sizes, and bootstrap confidence intervals. Sensitivity selection uses outer-training folds. Runtime, memory, energy, and neural floating-point operation counts are reported.
 
-#### Dependencies (evaluation environment)
+#### Dependencies
 
 * Python 3.10.19
 * NumPy 1.26.4
